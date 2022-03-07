@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Log {
 
-    public static void log(String... args) {
+    public static void d(String... args) {
         String message = Arrays.toString(args);
         System.out.println("============> "+message);
     }

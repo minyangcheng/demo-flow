@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:flowable="http://flowable.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://flowable.org/test" exporter="Flowable Open Source Modeler" exporterVersion="1.1.0-SNAPSHOT">
+    <process id="aaa" name="请假流程" isExecutable="true">
+        <startEvent id="startEvent1">
+            <extensionElements>
+                <flowable:formData />
+            </extensionElements>
+            <outgoing>Flow_0nz3n0k</outgoing>
+        </startEvent>
+        <userTask id="Activity_1vemj3t" name="领导1" flowable:assignee="领导1">
+            <extensionElements>
+                <flowable:assigneeType>static</flowable:assigneeType>
+                <flowable:formData />
+            </extensionElements>
+            <incoming>Flow_0nz3n0k</incoming>
+            <outgoing>Flow_10325bj</outgoing>
+        </userTask>
+        <sequenceFlow id="Flow_0nz3n0k" sourceRef="startEvent1" targetRef="Activity_1vemj3t" />
+        <userTask id="Activity_19vhql9" name="领导2" flowable:assignee="领导2">
+            <extensionElements>
+                <flowable:assigneeType>static</flowable:assigneeType>
+                <flowable:formData />
+            </extensionElements>
+            <incoming>Flow_10325bj</incoming>
+            <outgoing>Flow_1p8z7kr</outgoing>
+        </userTask>
+        <sequenceFlow id="Flow_10325bj" sourceRef="Activity_1vemj3t" targetRef="Activity_19vhql9" />
+        <userTask id="Activity_12xkvuo" name="领导3" flowable:assignee="领导3">
+            <extensionElements>
+                <flowable:assigneeType>static</flowable:assigneeType>
+                <flowable:formData />
+            </extensionElements>
+            <incoming>Flow_1p8z7kr</incoming>
+            <outgoing>Flow_1tse7tw</outgoing>
+        </userTask>
+        <sequenceFlow id="Flow_1p8z7kr" sourceRef="Activity_19vhql9" targetRef="Activity_12xkvuo" />
+        <endEvent id="Event_1rnivif">
+            <incoming>Flow_1tse7tw</incoming>
+        </endEvent>
+        <sequenceFlow id="Flow_1tse7tw" sourceRef="Activity_12xkvuo" targetRef="Event_1rnivif" />
+    </process>
+    <bpmndi:BPMNDiagram id="BPMNDiagram_aaa">
+        <bpmndi:BPMNPlane id="BPMNPlane_aaa" bpmnElement="aaa">
+            <bpmndi:BPMNEdge id="Flow_0nz3n0k_di" bpmnElement="Flow_0nz3n0k">
+                <omgdi:waypoint x="5" y="180" />
+                <omgdi:waypoint x="60" y="180" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="Flow_10325bj_di" bpmnElement="Flow_10325bj">
+                <omgdi:waypoint x="160" y="180" />
+                <omgdi:waypoint x="220" y="180" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="Flow_1p8z7kr_di" bpmnElement="Flow_1p8z7kr">
+                <omgdi:waypoint x="320" y="180" />
+                <omgdi:waypoint x="380" y="180" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="Flow_1tse7tw_di" bpmnElement="Flow_1tse7tw">
+                <omgdi:waypoint x="480" y="180" />
+                <omgdi:waypoint x="542" y="180" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNShape id="BPMNShape_startEvent1" bpmnElement="startEvent1">
+                <omgdc:Bounds x="-25" y="165" width="30" height="30" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="Activity_1vemj3t_di" bpmnElement="Activity_1vemj3t">
+                <omgdc:Bounds x="60" y="140" width="100" height="80" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="Activity_19vhql9_di" bpmnElement="Activity_19vhql9">
+                <omgdc:Bounds x="220" y="140" width="100" height="80" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="Activity_12xkvuo_di" bpmnElement="Activity_12xkvuo">
+                <omgdc:Bounds x="380" y="140" width="100" height="80" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="Event_1rnivif_di" bpmnElement="Event_1rnivif">
+                <omgdc:Bounds x="542" y="162" width="36" height="36" />
+            </bpmndi:BPMNShape>
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+</definitions>

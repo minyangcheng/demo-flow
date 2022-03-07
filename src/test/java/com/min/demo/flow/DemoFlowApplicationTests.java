@@ -25,7 +25,7 @@ class DemoFlowApplicationTests {
             String id = data.getId();
             String key = data.getKey();
             String name = data.getName();
-            Log.log("id=" + id, "key=" + key, "name=" + name);
+            Log.d("id=" + id, "key=" + key, "name=" + name);
         }
     }
 
